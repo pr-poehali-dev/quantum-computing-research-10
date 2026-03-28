@@ -14,7 +14,7 @@ export default function Featured() {
       role: "Эмигрантка, переводчица",
       description:
         "Вернулась нелегально, чтобы забрать дневники отца. Гордая, сильная, но ранимая. Ненавидит систему.",
-      image: null,
+      image: "https://cdn.poehali.dev/projects/ff2aee54-78d0-4fe9-a279-b16af5a3fc45/files/d6f283e6-9a4f-46ee-a7a5-d7c7e2814d9c.jpg",
     },
     {
       name: "Ираклий Туманов",
