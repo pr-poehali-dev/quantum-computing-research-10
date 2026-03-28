@@ -6,6 +6,7 @@ export default function Featured() {
       role: "Подполковник КГБ",
       description:
         "Аналитик. Сломлен, разочарован, пьёт. Хранит архив Анны. В финале выбирает попытку измениться.",
+      image: "https://cdn.poehali.dev/projects/ff2aee54-78d0-4fe9-a279-b16af5a3fc45/files/0953d575-ad4b-4693-945e-94e0daba323a.jpg",
     },
     {
       name: "Анна Раевская",
@@ -13,6 +14,7 @@ export default function Featured() {
       role: "Эмигрантка, переводчица",
       description:
         "Вернулась нелегально, чтобы забрать дневники отца. Гордая, сильная, но ранимая. Ненавидит систему.",
+      image: null,
     },
     {
       name: "Ираклий Туманов",
@@ -20,6 +22,7 @@ export default function Featured() {
       role: "«Серый кардинал» Госплана",
       description:
         "Циничен, хладнокровен. Пришёл за компроматом. Оказался предателем из зависти, а не идеологии.",
+      image: "https://cdn.poehali.dev/projects/ff2aee54-78d0-4fe9-a279-b16af5a3fc45/files/78d93316-53b1-46dd-888f-b928a4a36214.jpg",
     },
   ];
 
@@ -45,14 +48,23 @@ export default function Featured() {
         </p>
         <div className="flex flex-col gap-6">
           {characters.map((c) => (
-            <div key={c.name} className="border-t border-neutral-200 pt-4">
-              <div className="flex items-baseline gap-3 mb-1">
-                <span className="font-semibold text-neutral-900">{c.name}</span>
-                <span className="text-xs text-neutral-400 uppercase tracking-wide">
-                  {c.age} · {c.role}
-                </span>
+            <div key={c.name} className="border-t border-neutral-200 pt-4 flex gap-4 items-start">
+              {c.image && (
+                <img
+                  src={c.image}
+                  alt={c.name}
+                  className="w-14 h-14 object-cover grayscale shrink-0"
+                />
+              )}
+              <div className={c.image ? "" : "pl-[4.5rem]"}>
+                <div className="flex items-baseline gap-3 mb-1">
+                  <span className="font-semibold text-neutral-900">{c.name}</span>
+                  <span className="text-xs text-neutral-400 uppercase tracking-wide">
+                    {c.age} · {c.role}
+                  </span>
+                </div>
+                <p className="text-sm text-neutral-600 leading-relaxed">{c.description}</p>
               </div>
-              <p className="text-sm text-neutral-600 leading-relaxed">{c.description}</p>
             </div>
           ))}
         </div>
