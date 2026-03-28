@@ -1,22 +1,61 @@
 export default function Featured() {
+  const characters = [
+    {
+      name: "Дмитрий Волков",
+      age: "40 лет",
+      role: "Подполковник КГБ",
+      description:
+        "Аналитик. Сломлен, разочарован, пьёт. Хранит архив Анны. В финале выбирает попытку измениться.",
+    },
+    {
+      name: "Анна Раевская",
+      age: "41 год",
+      role: "Эмигрантка, переводчица",
+      description:
+        "Вернулась нелегально, чтобы забрать дневники отца. Гордая, сильная, но ранимая. Ненавидит систему.",
+    },
+    {
+      name: "Ираклий Туманов",
+      age: "61 год",
+      role: "«Серый кардинал» Госплана",
+      description:
+        "Циничен, хладнокровен. Пришёл за компроматом. Оказался предателем из зависти, а не идеологии.",
+    },
+  ];
+
   return (
     <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-white">
       <div className="flex-1 h-[400px] lg:h-[800px] mb-8 lg:mb-0 lg:order-2">
         <img
-          src="/images/woman-horse.jpg"
-          alt="Woman on horse in countryside"
+          src="https://cdn.poehali.dev/projects/ff2aee54-78d0-4fe9-a279-b16af5a3fc45/files/0835d447-7e43-4fd3-a52c-155fe03d1374.jpg"
+          alt="Волков и Туманов за столом"
           className="w-full h-full object-cover"
         />
       </div>
       <div className="flex-1 text-left lg:h-[800px] flex flex-col justify-center lg:mr-12 lg:order-1">
-        <h3 className="uppercase mb-4 text-sm tracking-wide text-neutral-600">Функции, которые не стоят на месте</h3>
-        <p className="text-2xl lg:text-4xl mb-8 text-neutral-900 leading-tight">
-          Не просто список возможностей — живые, дышащие акценты. Каждая функция адаптируется к движению, контексту и настроению,
-          оживляя продукт с первого взгляда.
+        <h3 className="uppercase mb-4 text-sm tracking-widest text-neutral-500">
+          Герои
+        </h3>
+        <p className="text-2xl lg:text-3xl mb-10 text-neutral-900 leading-tight font-light">
+          Трое людей, связанных одним тайником.
+          <br />
+          Любовь, предательство, выбор —
+          <br />
+          за одну ночь.
         </p>
-        <button className="bg-black text-white border border-black px-4 py-2 text-sm transition-all duration-300 hover:bg-white hover:text-black cursor-pointer w-fit uppercase tracking-wide">
-          Подробнее
-        </button>
+        <div className="flex flex-col gap-6">
+          {characters.map((c) => (
+            <div key={c.name} className="border-t border-neutral-200 pt-4">
+              <div className="flex items-baseline gap-3 mb-1">
+                <span className="font-semibold text-neutral-900">{c.name}</span>
+                <span className="text-xs text-neutral-400 uppercase tracking-wide">
+                  {c.age} · {c.role}
+                </span>
+              </div>
+              <p className="text-sm text-neutral-600 leading-relaxed">{c.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
