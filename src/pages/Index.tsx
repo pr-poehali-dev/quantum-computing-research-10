@@ -5,6 +5,7 @@ import Featured from "@/components/Featured";
 import Promo from "@/components/Promo";
 import Gallery from "@/components/Gallery";
 import Screenings from "@/components/Screenings";
+import Press from "@/components/Press";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -17,6 +18,7 @@ const Index = () => {
       <Promo />
       <Gallery />
       <Screenings />
+      <Press />
       <Footer />
     </main>
   );
