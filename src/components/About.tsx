@@ -71,9 +71,9 @@ export default function About() {
                 Создатели
               </p>
               {[
-                { role: "Режиссёр", name: "Алексей Смирнов" },
-                { role: "Сценарий", name: "Виктор Некрасов" },
-                { role: "Оператор", name: "Сергей Урусевский" },
+                { role: "Режиссёр", name: "Тихон Горбунов" },
+                { role: "Сценарий", name: "Тихон Горбунов" },
+                { role: "Оператор", name: "Влад Ермаков" },
                 { role: "Музыка", name: "Эдисон Денисов" },
               ].map((c) => (
                 <div key={c.role} className="flex justify-between border-b border-neutral-800 py-2">
